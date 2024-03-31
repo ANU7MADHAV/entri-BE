@@ -5,6 +5,9 @@ const route = (app) => {
     return res.send("hello admin page");
   });
 
+  app.post("/admin/signup", adminController.signup);
+  app.post("/admin/signin", adminController.signin);
+
   //
 
   app.post("/admin/course", courseController.createCourse);

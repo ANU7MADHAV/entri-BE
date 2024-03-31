@@ -6,7 +6,10 @@ const singup = async (req, res) => {
   try {
     const body = req.body;
     const { username, password, firstName, lastName } = body;
-
+    const userExist = await User.findOne({ username });
+    if (userExist) {
+      return res.send("User is already exist");
+    }
     const saltRounds = 10;
     const hashPassword = await bcrypt.hash(password, saltRounds);
 

@@ -1,6 +1,6 @@
 const userControllers = require("../controllers/userControllers");
 const courseController = require("../controllers/courseControllers");
-const middleware = require("../Middlewares/auth-middleware");
+const middleware = require("../Middlewares/user-auth-middleware");
 
 const route = (app) => {
   app.post("/signup", userControllers.singup);
